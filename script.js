@@ -46,77 +46,64 @@ async function predict() {
 
             switch (p.className) {
 
-                case "Mangga":
+    case "pohon mangga":
+        hasil = `
+        <h2>🥭 Pohon Mangga</h2>
 
-                    hasil = `
-                    <h2>🥭 Mangga</h2>
+        <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+        <p><b>Manfaat :</b> Menghasilkan buah yang kaya vitamin, menyerap karbon dioksida, menghasilkan oksigen, dan membantu penghijauan.</p>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah yang kaya vitamin, menyerap karbon dioksida, menghasilkan oksigen, dan membantu penghijauan.</p>
+        <p><b>Perawatan :</b> Siram 1–2 kali sehari, beri pupuk organik, dan letakkan di tempat yang terkena sinar matahari.</p>
+        `;
+        break;
 
-                    <p><b>Perawatan :</b> Siram 1–2 kali sehari, beri pupuk organik, dan letakkan di tempat yang terkena sinar matahari.</p>
-                    `;
-                    break;
+    case "pohon apel":
+        hasil = `
+        <h2>🍎 Pohon Apel</h2>
 
-                case "Kelapa":
+        <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    hasil = `
-                    <h2>🥥 Kelapa</h2>
+        <p><b>Manfaat :</b> Menghasilkan buah bergizi, membantu penghijauan, menyerap karbon dioksida, dan menghasilkan oksigen.</p>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+        <p><b>Perawatan :</b> Cocok di daerah sejuk, siram secukupnya, dan beri pupuk organik.</p>
+        `;
+        break;
 
-                    <p><b>Manfaat :</b> Mencegah abrasi, menghasilkan oksigen, dan hampir seluruh bagian pohon dapat dimanfaatkan.</p>
+    case "pohon kelapa":
+        hasil = `
+        <h2>🥥 Pohon Kelapa</h2>
 
-                    <p><b>Perawatan :</b> Sinar matahari penuh, siram rutin saat masih muda, dan beri pupuk.</p>
-                    `;
-                    break;
+        <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                case "Pisang":
+        <p><b>Manfaat :</b> Mencegah abrasi, menghasilkan oksigen, dan hampir seluruh bagian pohon dapat dimanfaatkan.</p>
 
-                    hasil = `
-                    <h2>🍌 Pisang</h2>
+        <p><b>Perawatan :</b> Sinar matahari penuh, siram rutin saat masih muda, dan beri pupuk.</p>
+        `;
+        break;
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+    case "pohon pisang":
+        hasil = `
+        <h2>🍌 Pohon Pisang</h2>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah bergizi, menjaga kelembapan tanah, dan mendukung penghijauan.</p>
+        <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Perawatan :</b> Tanah lembap, beri pupuk organik, dan bersihkan daun kering.</p>
-                    `;
-                    break;
+        <p><b>Manfaat :</b> Menghasilkan buah bergizi, menjaga kelembapan tanah, dan mendukung penghijauan.</p>
 
-                case "Jambu":
+        <p><b>Perawatan :</b> Tanah lembap, beri pupuk organik, dan bersihkan daun kering.</p>
+        `;
+        break;
 
-                    hasil = `
-                    <h2>🍈 Jambu</h2>
+    case "pohon jambu":
+        hasil = `
+        <h2>🍈 Pohon Jambu</h2>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+        <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah kaya vitamin C, menyerap karbon dioksida, dan menambah ruang hijau.</p>
+        <p><b>Manfaat :</b> Menghasilkan buah kaya vitamin C, menyerap karbon dioksida, dan menambah ruang hijau.</p>
 
-                    <p><b>Perawatan :</b> Siram rutin, pangkas ranting tua, dan beri pupuk organik.</p>
-                    `;
-                    break;
-
-                case "Apel":
-
-                    hasil = `
-                    <h2>🍎 Apel</h2>
-
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
-
-                    <p><b>Manfaat :</b> Menghasilkan buah bergizi, membantu penghijauan, menyerap karbon dioksida, dan menghasilkan oksigen.</p>
-
-                    <p><b>Perawatan :</b> Cocok di daerah sejuk, siram secukupnya, dan beri pupuk organik.</p>
-                    `;
-                    break;
-
-            }
-
-        }
-
-    });
-
-    labelContainer.innerHTML = hasil;
-
+        <p><b>Perawatan :</b> Siram rutin, pangkas ranting tua, dan beri pupuk organik.</p>
+        `;
+        break;
+}
 }
