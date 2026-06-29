@@ -9,138 +9,152 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- TensorFlow -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- Navbar -->
 
     <nav>
 
-        <div class="logo">
-            🌱 EcoScan AI
-        </div>
+        <h2>🌱 EcoScan AI</h2>
 
-        <div class="team">
-            by <span>Eco Rangers</span>
-        </div>
+        <p>Developed by <span>Eco Rangers</span></p>
 
     </nav>
 
-    <!-- ================= HERO ================= -->
+    <!-- Hero -->
 
     <section class="hero">
 
-        <h1>Technology for Nature</h1>
-
-        <h2>Powered by Artificial Intelligence</h2>
+        <h1>Recognize Trees with Artificial Intelligence</h1>
 
         <p>
-            EcoScan AI membantu mengenali berbagai jenis pohon secara cepat
-            menggunakan teknologi Artificial Intelligence. Cukup arahkan kamera,
-            lalu AI akan mengidentifikasi jenis pohon beserta manfaat dan cara
-            perawatannya.
+            Welcome to <b>EcoScan AI</b>, a smart web application that helps
+            identify tree species using Artificial Intelligence.
+            Simply point your camera at a tree and instantly receive
+            information about its name, benefits, and care recommendations.
         </p>
 
         <button onclick="init()">
-            📷 Mulai Scan
+            📷 Start Scanning
         </button>
 
     </section>
 
-    <!-- ================= SCAN ================= -->
+    <!-- Scan -->
 
-    <section class="scan-section">
+    <section class="scan">
 
-        <h2>🔍 Scan Tanaman</h2>
+        <h2>🔍 Scan Tree</h2>
 
         <p>
-            Arahkan kamera ke pohon yang ingin dikenali.
-            Pastikan objek terlihat jelas agar hasil identifikasi lebih akurat.
+            Point your camera toward the tree you want to identify.
+            Make sure the object is clearly visible for the best detection results.
         </p>
 
         <div id="webcam-container"></div>
 
     </section>
 
-    <!-- ================= HASIL AI ================= -->
+    <!-- Result -->
 
-    <section class="result-section">
+    <section class="result">
 
-        <h2>🌿 Hasil Identifikasi</h2>
+        <h2>🌿 Detection Result</h2>
 
-        <div id="label-container"></div>
+        <div id="label-container">
+
+            <p class="waiting">
+                Waiting for AI detection...
+            </p>
+
+        </div>
 
     </section>
 
-    <!-- ================= ABOUT ================= -->
+    <!-- About -->
 
     <section class="about">
 
-        <h2>Tentang EcoScan AI</h2>
+        <h2>About EcoScan AI</h2>
 
         <p>
-            EcoScan AI merupakan website berbasis Artificial Intelligence yang
-            dirancang untuk membantu pengguna mengenali beberapa jenis pohon
-            secara real-time melalui kamera.
-        </p>
-
-        <p>
-            Selain mengidentifikasi tanaman, EcoScan AI juga memberikan informasi
-            mengenai manfaat dan cara perawatan sehingga pengguna dapat lebih
-            mudah mengenali dan menjaga tanaman di lingkungan sekitar.
+            EcoScan AI is an Artificial Intelligence-based website designed
+            to recognize several tree species through real-time camera detection.
+            In addition to identifying trees, EcoScan AI provides useful
+            information about their benefits and maintenance to encourage
+            environmental awareness.
         </p>
 
     </section>
 
-    <!-- ================= FITUR ================= -->
+    <!-- Features -->
 
     <section class="features">
 
         <div class="card">
-            🤖
-            <h3>AI Recognition</h3>
-            <p>Mendeteksi jenis pohon menggunakan Artificial Intelligence.</p>
+
+            <h3>🤖 AI Recognition</h3>
+
+            <p>
+                Automatically identifies tree species using AI technology.
+            </p>
+
         </div>
 
         <div class="card">
-            📷
-            <h3>Real-Time Scan</h3>
-            <p>Scan tanaman secara langsung melalui kamera.</p>
+
+            <h3>📷 Real-Time Camera</h3>
+
+            <p>
+                Detect trees directly through your device camera.
+            </p>
+
         </div>
 
         <div class="card">
-            🌿
-            <h3>Plant Information</h3>
-            <p>Memberikan manfaat setiap pohon yang berhasil dikenali.</p>
+
+            <h3>🌳 Tree Information</h3>
+
+            <p>
+                Displays useful information and environmental benefits.
+            </p>
+
         </div>
 
         <div class="card">
-            💧
-            <h3>Plant Care</h3>
-            <p>Menyediakan rekomendasi perawatan tanaman.</p>
+
+            <h3>💧 Tree Care</h3>
+
+            <p>
+                Provides simple recommendations for proper tree care.
+            </p>
+
         </div>
 
     </section>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- Footer -->
 
     <footer>
 
-        <h3>🌱 EcoScan AI</h3>
+        <h2>🌱 EcoScan AI</h2>
 
         <p>Developed by <b>Eco Rangers</b></p>
 
-        <p>Artificial Intelligence • Plant Recognition</p>
+        <p>Artificial Intelligence • Tree Recognition</p>
 
-        <p>© 2026 Eco Rangers</p>
+        <p>© 2026 Eco Rangers. All Rights Reserved.</p>
 
     </footer>
 
