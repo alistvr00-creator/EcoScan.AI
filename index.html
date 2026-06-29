@@ -4,31 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EcoScan AI</title>
 
     <link rel="stylesheet" href="style.css">
 
-   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <!-- TensorFlow -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
 </head>
 
 <body>
 
-    <header>
-        <h1>🌱 EcoScan AI</h1>
-        <p>Kenali Tanaman dengan Artificial Intelligence</p>
-    </header>
+    <!-- ================= NAVBAR ================= -->
 
-    <main class="container">
+    <nav>
 
-        <button onclick="init()">📷 Buka Kamera</button>
+        <div class="logo">
+            🌱 EcoScan AI
+        </div>
+
+        <div class="team">
+            by <span>Eco Rangers</span>
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>Technology for Nature</h1>
+
+        <h2>Powered by Artificial Intelligence</h2>
+
+        <p>
+            EcoScan AI membantu mengenali berbagai jenis pohon secara cepat
+            menggunakan teknologi Artificial Intelligence. Cukup arahkan kamera,
+            lalu AI akan mengidentifikasi jenis pohon beserta manfaat dan cara
+            perawatannya.
+        </p>
+
+        <button onclick="init()">
+            📷 Mulai Scan
+        </button>
+
+    </section>
+
+    <!-- ================= SCAN ================= -->
+
+    <section class="scan-section">
+
+        <h2>🔍 Scan Tanaman</h2>
+
+        <p>
+            Arahkan kamera ke pohon yang ingin dikenali.
+            Pastikan objek terlihat jelas agar hasil identifikasi lebih akurat.
+        </p>
 
         <div id="webcam-container"></div>
 
+    </section>
+
+    <!-- ================= HASIL AI ================= -->
+
+    <section class="result-section">
+
+        <h2>🌿 Hasil Identifikasi</h2>
+
         <div id="label-container"></div>
 
-    </main>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about">
+
+        <h2>Tentang EcoScan AI</h2>
+
+        <p>
+            EcoScan AI merupakan website berbasis Artificial Intelligence yang
+            dirancang untuk membantu pengguna mengenali beberapa jenis pohon
+            secara real-time melalui kamera.
+        </p>
+
+        <p>
+            Selain mengidentifikasi tanaman, EcoScan AI juga memberikan informasi
+            mengenai manfaat dan cara perawatan sehingga pengguna dapat lebih
+            mudah mengenali dan menjaga tanaman di lingkungan sekitar.
+        </p>
+
+    </section>
+
+    <!-- ================= FITUR ================= -->
+
+    <section class="features">
+
+        <div class="card">
+            🤖
+            <h3>AI Recognition</h3>
+            <p>Mendeteksi jenis pohon menggunakan Artificial Intelligence.</p>
+        </div>
+
+        <div class="card">
+            📷
+            <h3>Real-Time Scan</h3>
+            <p>Scan tanaman secara langsung melalui kamera.</p>
+        </div>
+
+        <div class="card">
+            🌿
+            <h3>Plant Information</h3>
+            <p>Memberikan manfaat setiap pohon yang berhasil dikenali.</p>
+        </div>
+
+        <div class="card">
+            💧
+            <h3>Plant Care</h3>
+            <p>Menyediakan rekomendasi perawatan tanaman.</p>
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>🌱 EcoScan AI</h3>
+
+        <p>Developed by <b>Eco Rangers</b></p>
+
+        <p>Artificial Intelligence • Plant Recognition</p>
+
+        <p>© 2026 Eco Rangers</p>
+
+    </footer>
 
     <script src="script.js"></script>
 
