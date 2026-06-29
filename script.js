@@ -14,11 +14,11 @@ async function init() {
     webcam = new tmImage.Webcam(350, 350, true);
 
     await webcam.setup();
-
     await webcam.play();
 
     window.requestAnimationFrame(loop);
 
+    document.getElementById("webcam-container").innerHTML = "";
     document.getElementById("webcam-container").appendChild(webcam.canvas);
 
     labelContainer = document.getElementById("label-container");
@@ -27,7 +27,6 @@ async function init() {
 async function loop() {
 
     webcam.update();
-
     await predict();
 
     window.requestAnimationFrame(loop);
@@ -38,11 +37,16 @@ async function predict() {
 
     const prediction = await model.predict(webcam.canvas);
 
-    let hasil = "";
+    let hasil = `
+        <div class="waiting">
+            <h3>📷 AI sedang menunggu objek...</h3>
+            <p>Arahkan kamera ke salah satu pohon yang tersedia.</p>
+        </div>
+    `;
 
     prediction.forEach((p) => {
 
-        if (p.probability > 0.50) {
+        if (p.probability > 0.80) {
 
             switch (p.className) {
 
@@ -51,11 +55,27 @@ async function predict() {
                     hasil = `
                     <h2>🥭 Pohon Mangga</h2>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+                    <p><b>🎯 Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah yang kaya vitamin, menyerap karbon dioksida, menghasilkan oksigen, dan membantu penghijauan.</p>
+                    <hr>
 
-                    <p><b>Perawatan :</b> Siram 1–2 kali sehari, beri pupuk organik, dan letakkan di tempat yang terkena sinar matahari.</p>
+                    <p><b>🌿 Manfaat</b></p>
+
+                    <p>
+                    Menghasilkan buah yang kaya vitamin, membantu menyerap karbon dioksida,
+                    menghasilkan oksigen, serta memberikan keteduhan bagi lingkungan.
+                    </p>
+
+                    <p><b>💧 Cara Perawatan</b></p>
+
+                    <ul>
+                        <li>Siram secara rutin.</li>
+                        <li>Berikan pupuk organik.</li>
+                        <li>Pastikan mendapat sinar matahari.</li>
+                        <li>Pangkas ranting yang kering.</li>
+                    </ul>
+
+                    <p><b>✅ Status :</b> Tanaman berhasil dikenali oleh AI.</p>
                     `;
                     break;
 
@@ -64,11 +84,27 @@ async function predict() {
                     hasil = `
                     <h2>🍎 Pohon Apel</h2>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+                    <p><b>🎯 Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah bergizi, membantu penghijauan, menyerap karbon dioksida, dan menghasilkan oksigen.</p>
+                    <hr>
 
-                    <p><b>Perawatan :</b> Cocok di daerah sejuk, siram secukupnya, dan beri pupuk organik.</p>
+                    <p><b>🌿 Manfaat</b></p>
+
+                    <p>
+                    Menghasilkan buah yang bergizi, membantu penghijauan,
+                    menghasilkan oksigen, dan menjaga keseimbangan lingkungan.
+                    </p>
+
+                    <p><b>💧 Cara Perawatan</b></p>
+
+                    <ul>
+                        <li>Tanam di daerah yang sejuk.</li>
+                        <li>Siram secukupnya.</li>
+                        <li>Berikan pupuk secara berkala.</li>
+                        <li>Jaga kelembapan tanah.</li>
+                    </ul>
+
+                    <p><b>✅ Status :</b> Tanaman berhasil dikenali oleh AI.</p>
                     `;
                     break;
 
@@ -77,11 +113,27 @@ async function predict() {
                     hasil = `
                     <h2>🥥 Pohon Kelapa</h2>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+                    <p><b>🎯 Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Manfaat :</b> Mencegah abrasi, menghasilkan oksigen, dan hampir seluruh bagian pohon dapat dimanfaatkan.</p>
+                    <hr>
 
-                    <p><b>Perawatan :</b> Sinar matahari penuh, siram rutin saat masih muda, dan beri pupuk.</p>
+                    <p><b>🌿 Manfaat</b></p>
+
+                    <p>
+                    Membantu mencegah abrasi pantai, menghasilkan oksigen,
+                    dan hampir seluruh bagian pohon dapat dimanfaatkan.
+                    </p>
+
+                    <p><b>💧 Cara Perawatan</b></p>
+
+                    <ul>
+                        <li>Tanam di tempat terbuka.</li>
+                        <li>Siram saat masih muda.</li>
+                        <li>Berikan pupuk secara berkala.</li>
+                        <li>Pastikan mendapat sinar matahari penuh.</li>
+                    </ul>
+
+                    <p><b>✅ Status :</b> Tanaman berhasil dikenali oleh AI.</p>
                     `;
                     break;
 
@@ -90,11 +142,27 @@ async function predict() {
                     hasil = `
                     <h2>🍌 Pohon Pisang</h2>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+                    <p><b>🎯 Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah bergizi, menjaga kelembapan tanah, dan mendukung penghijauan.</p>
+                    <hr>
 
-                    <p><b>Perawatan :</b> Tanah lembap, beri pupuk organik, dan bersihkan daun kering.</p>
+                    <p><b>🌿 Manfaat</b></p>
+
+                    <p>
+                    Menghasilkan buah yang kaya nutrisi, menjaga kelembapan tanah,
+                    dan membantu penghijauan di lingkungan sekitar.
+                    </p>
+
+                    <p><b>💧 Cara Perawatan</b></p>
+
+                    <ul>
+                        <li>Siram secara rutin.</li>
+                        <li>Gunakan pupuk organik.</li>
+                        <li>Bersihkan daun yang kering.</li>
+                        <li>Jaga kelembapan tanah.</li>
+                    </ul>
+
+                    <p><b>✅ Status :</b> Tanaman berhasil dikenali oleh AI.</p>
                     `;
                     break;
 
@@ -103,11 +171,28 @@ async function predict() {
                     hasil = `
                     <h2>🍈 Pohon Jambu</h2>
 
-                    <p><b>Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
+                    <p><b>🎯 Akurasi :</b> ${(p.probability * 100).toFixed(2)}%</p>
 
-                    <p><b>Manfaat :</b> Menghasilkan buah kaya vitamin C, menyerap karbon dioksida, dan menambah ruang hijau.</p>
+                    <hr>
 
-                    <p><b>Perawatan :</b> Siram rutin, pangkas ranting tua, dan beri pupuk organik.</p>
+                    <p><b>🌿 Manfaat</b></p>
+
+                    <p>
+                    Menghasilkan buah yang kaya vitamin C,
+                    membantu menyerap karbon dioksida,
+                    dan menghasilkan oksigen bagi lingkungan.
+                    </p>
+
+                    <p><b>💧 Cara Perawatan</b></p>
+
+                    <ul>
+                        <li>Siram secara teratur.</li>
+                        <li>Berikan pupuk organik.</li>
+                        <li>Pangkas ranting tua.</li>
+                        <li>Pastikan mendapat cahaya matahari.</li>
+                    </ul>
+
+                    <p><b>✅ Status :</b> Tanaman berhasil dikenali oleh AI.</p>
                     `;
                     break;
             }
